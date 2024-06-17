@@ -39,8 +39,8 @@ public class LinkedList {
         } else {
             tail.next = newNode;
             tail = newNode;
-            length ++;
         }
+        length ++;
     }
 
     public Node removeLast() {
@@ -155,6 +155,73 @@ public class LinkedList {
         length --;
 
         return temp;
+    }
+
+    public void reverse() {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
+    public Node findMiddleNode() {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+    }
+
+    public boolean hasLoop() {
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(fast == slow) {
+                return true;
+            }
+
+        }
+
+        return false;
+    }
+
+    public Node findKthFromEnd(int k) {
+        Node slow = head; // Initialize slow pointer at head
+        Node fast = head; // Initialize fast pointer at head
+
+        // Move fast pointer k steps ahead
+        for (int i = 0; i < k; i++) {
+            if (fast == null) { // If k is out of bounds, return null
+                return null;
+            }
+            fast = fast.next; // Move the fast pointer to the next node
+        }
+
+        // Move both pointers until fast reaches the end
+        while (fast != null) {
+            slow = slow.next; // Move the slow pointer to the next node
+            fast = fast.next; // Move the fast pointer to the next node
+        }
+
+        return slow; // Return the kth node from the end (slow pointer)
     }
 
     public Node getHead() {

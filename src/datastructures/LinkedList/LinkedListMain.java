@@ -70,5 +70,19 @@ public class LinkedListMain {
         linkedList.remove(4);
         linkedList.printList();
         System.out.println("============================");
+
+        linkedList.reverse();
+        linkedList.printList();
+
+        System.out.println("===========================");
+
+        System.out.println(linkedList.findMiddleNode().value);
+
+        System.out.println("===========================");
+
+        System.out.println(linkedList.hasLoop());
+        System.out.println("===========================");
+        System.out.println(linkedList.findKthFromEnd(3).value);
+
     }
 }
