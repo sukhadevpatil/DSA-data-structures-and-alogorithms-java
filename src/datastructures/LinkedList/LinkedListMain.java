@@ -52,5 +52,23 @@ public class LinkedListMain {
         System.out.println(linkedList.get(1).value);
         System.out.println(linkedList.get(0).value);
         System.out.println(linkedList.get(2).value);
+
+        System.out.println("============================");
+        linkedList.printList();
+        System.out.println("-------------");
+        linkedList.set(1, 111);
+
+        linkedList.printList();
+        System.out.println("============================");
+
+        linkedList.insert(0, 1);
+        linkedList.insert(4, 444);
+        linkedList.insert(5, 555);
+
+        linkedList.printList();
+        System.out.println("============================");
+        linkedList.remove(4);
+        linkedList.printList();
+        System.out.println("============================");
     }
 }
