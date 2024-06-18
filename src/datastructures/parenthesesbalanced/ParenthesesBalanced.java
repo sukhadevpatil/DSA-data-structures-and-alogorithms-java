@@ -6,7 +6,9 @@ public class ParenthesesBalanced {
 
     public static void main(String[] args) {
         System.out.println(isBalancedParentheses("()"));
-        System.out.println(isBalancedParentheses("((())"));
+        System.out.println(isBalancedParentheses("())"));
+        System.out.println(isBalancedParentheses("()()()"));
+        System.out.println(isBalancedParentheses("()((())"));
         System.out.println(isBalancedParentheses("((())))"));
     }
 
