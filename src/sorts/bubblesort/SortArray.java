@@ -18,5 +18,9 @@ public class SortArray {
         }
 
         System.out.println(Arrays.toString(myArray));
+
+        //JFYI
+        int [][][] test = {{{1,2}, {11, 22}}, {{3, 4}, {5, 6}}};
+        System.out.println(Arrays.deepToString(test));
     }
 }
